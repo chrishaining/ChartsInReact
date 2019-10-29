@@ -5,15 +5,15 @@ class ChartContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      songs: []
+      top20: {}
     }
   }
 
   componentDidMount() {
     fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20/json')
-      .then(results => results.json())
-      .then(songs =>
-        this.setState({ songs: songs }))
+      .then(res => res.json())
+      .then(data =>
+        this.setState({ top20: data }))
       .catch(err => console.error)
 
   }
@@ -22,7 +22,7 @@ class ChartContainer extends Component {
     return (
       <div>
         <h2>This is the container</h2>
-        <SongsList songs />
+        <SongsList songs={this.state.top20} />
       </div>
     )
   }

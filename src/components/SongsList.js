@@ -4,21 +4,31 @@ import Song from './Song'
 class SongsList extends Component {
 
   render() {
-    const songsNodes = this.props.songs.map((song) => {
-      return (
-        <Song key={song["im:id"]} name={song["im:name"]} > Wooo </Song>
-      )
-    })
 
     return (
       <React.Fragment>
-        <h3>This is the SongsList</h3>
-        {songsNodes}
+        <h1>{this.props.top20}</h1>
       </React.Fragment>
     )
   }
+
 }
 
-
-
 export default SongsList
+// //
+// render() {
+//   const songsNodes = this.props.songs.feed.entry.map((song) => {
+//     return (
+//       <Song key={song['id']} name={song['im:name']} ></Song>
+//     );
+//   });
+
+//   return (
+//     <React.Fragment>
+//       {songsNodes}
+//     </React.Fragment>
+//   )
+// }
+
+// }
+
